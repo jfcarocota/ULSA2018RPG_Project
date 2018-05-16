@@ -74,6 +74,8 @@ public class Player : Combatant {
     {
         if (!isAttacking) Axis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         else Axis = Vector2.zero;
+
+        Anim.SetFloat("speed", Axis.magnitude);
     }
 
     private void pauseGame()
@@ -86,8 +88,7 @@ public class Player : Combatant {
     protected override IEnumerator attack(float animationTime)
     {
         isAttacking = true;
-
-        //Anim.SetTrigger("attack");
+        Anim.SetTrigger("attack");
 
         yield return new WaitForSeconds(animationTime / 2);
         //Desplega el damageBox

@@ -13,6 +13,7 @@ public class GenericEnemy : Combatant {
     [SerializeField] float visionDistance;
     [SerializeField] float chaseDistance;
     [SerializeField] float attackDistance;
+    [SerializeField] float attackTime;
 
     NavMeshAgent Nav;
 
@@ -27,6 +28,7 @@ public class GenericEnemy : Combatant {
         enemyState = botStates.waiting;
         Nav = GetComponent<NavMeshAgent>();
         Nav.speed = Speed;
+        Nav.angularSpeed = 360;
     }
 
     private void Update()
@@ -55,10 +57,14 @@ public class GenericEnemy : Combatant {
                 if (Vector3.Distance(gameManager.instance.player.position, transform.position) <= chaseDistance)
                 {
                     if (Vector3.Distance(gameManager.instance.player.position, transform.position) <= attackDistance)
+                    {
+                        Anim.SetFloat("speed", 0f);
                         enemyState = botStates.attack;
+                    }
                     else
                     {
                         Nav.SetDestination(gameManager.instance.player.position);
+                        Anim.SetFloat("speed", 1f);
                     }
                 }
                 else enemyState = botStates.waiting;
@@ -68,7 +74,7 @@ public class GenericEnemy : Combatant {
                 if (!isAttacking)
                 {
                     transform.LookAt(gameManager.instance.player);
-                    StartCoroutine(attack(1));
+                    StartCoroutine(attack(attackTime));
                 }
                 break;
             default:
@@ -98,6 +104,7 @@ public class GenericEnemy : Combatant {
                 Aud.Stop();
                 Axis = Vector2.zero;
             }
+            Anim.SetFloat("speed", Axis.magnitude);
             yield return new WaitForSeconds(time);
         }
         isPatrolling = false;
@@ -107,7 +114,7 @@ public class GenericEnemy : Combatant {
     {
         isAttacking = true;
 
-        //Anim.SetTrigger("attack");
+        Anim.SetTrigger("attack");
 
         yield return new WaitForSeconds(animationTime / 2);
         //Desplega el damageBox

@@ -36,6 +36,8 @@ public class Combatant : Actor {
         damageBoxStartPosition = damageBox.position;
         damageBoxMaxScale = damageBox.localScale;
         damageBox.localScale = Vector3.zero;
+
+        Anim.SetInteger("life", Health);
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -53,16 +55,15 @@ public class Combatant : Actor {
             Health -= (inDamageValue - defense);
             if (Health > 0)
             {
-                //Anim.SetTrigger("Hurt");
                 Aud.PlayOneShot(audioDamage);
             }
             else
             {
-                //Anim.SetTrigger("Die");
                 Aud.PlayOneShot(audioDeath);
                 Destroy(gameObject, audioDeath.length);
             }
 
+            Anim.SetInteger("life", Health);
             invulnerable = true;
             StartCoroutine(ModifierCountDown(1, (x) => invulnerable = x));
         }
