@@ -9,22 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68dc5cc17d47e404aaabe8f92f850989, type: 3}
-  m_Name: Dialogue01
+  m_Name: Dialogue03
   m_EditorClassIdentifier: 
   fullDialogue:
   - imageTalker: {fileID: 0}
     audio: {fileID: 8300000, guid: 29709ec726aada7449be885c347c80ea, type: 3}
-    talker: testNPC
-    conversation: Buenos dias caballero
+    talker: 
+    conversation: El resto del pueblo no me cree, pero estoy seguro de que vi un ogro
+      enorme al fondo del bosque
   - imageTalker: {fileID: 0}
     audio: {fileID: 0}
-    talker: testNPC
-    conversation: Hemos tenido varios problemas con los monstruos del bosque.
-  - imageTalker: {fileID: 0}
-    audio: {fileID: 8300000, guid: c7ef707a0854ca942a0e3fe4e6f9c7ed, type: 3}
-    talker: testNPC
-    conversation: Incluso se han llevado algunos de los pueblerinos.
-  - imageTalker: {fileID: 0}
-    audio: {fileID: 0}
-    talker: testNPC
-    conversation: Quiza pueda darnos una mano con ello.
+    talker: 
+    conversation: Ayudame a convencerles

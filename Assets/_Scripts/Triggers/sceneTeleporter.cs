@@ -13,7 +13,6 @@ public class sceneTeleporter : MonoBehaviour {
         {
             gameManager.instance.ChangeBackGroundMusic(sceneNumber);
             gameManager.instance.changeScene(sceneNumber);
-            
         }
     }
 

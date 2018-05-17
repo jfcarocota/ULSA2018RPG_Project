@@ -11,11 +11,12 @@ public class Interactuable : MonoBehaviour {
 
     private void Start()
     {
-        player = gameManager.instance.player.GetComponent<Player>();
+        if (gameManager.instance.player != null) searchPlayer();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (player == null) searchPlayer();
         if (other.CompareTag("Player"))
         {
             player.interactionTarget = this;
@@ -48,5 +49,10 @@ public class Interactuable : MonoBehaviour {
         gameManager.instance.InScene = false;
         player.textBox.closeTextBox();
         currentDialogueFrame = 0;
+    }
+
+    private void searchPlayer()
+    {
+        player = gameManager.instance.player.GetComponent<Player>();
     }
 }

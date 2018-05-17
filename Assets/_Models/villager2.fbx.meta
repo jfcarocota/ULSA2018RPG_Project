@@ -1,0 +1,261 @@
+fileFormatVersion: 2
+guid: 7bcbb25c2e68e2843ade89fb72b45e2a
+timeCreated: 1526533076
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bota_Der
+    100002: Bota_Izq
+    100004: Cabeza
+    100006: Cuerpo
+    100008: Gallo
+    100010: Hombro_Der
+    100012: Hombro_Izq
+    100014: Mano_Der
+    100016: Mano_Izq
+    100018: pCylinder1
+    100020: polySurface11
+    100022: polySurface12
+    100024: polySurface13
+    100026: polySurface14
+    100028: polySurface15
+    100030: polySurface16
+    100032: polySurface17
+    100034: polySurface17 1
+    100036: polySurface18
+    100038: polySurface19
+    100040: polySurface20
+    100042: polySurface31
+    100044: polySurface32
+    100046: polySurface33
+    100048: polySurface34
+    100050: polySurface35
+    100052: polySurface36
+    100054: polySurface36 1
+    100056: polySurface37
+    100058: polySurface38
+    100060: polySurface39
+    100062: polySurface40
+    100064: polySurface41
+    100066: polySurface41 1
+    100068: polySurface42
+    100070: polySurface43
+    100072: polySurface44
+    100074: polySurface49
+    100076: pSphere1
+    100078: transform1
+    100080: transform10
+    100082: transform2
+    100084: transform22
+    100086: transform24
+    100088: transform25
+    100090: transform26
+    100092: transform27
+    100094: transform28
+    100096: transform29
+    100098: transform3
+    100100: transform30
+    100102: transform31
+    100104: transform32
+    100106: transform33
+    100108: transform4
+    100110: transform44
+    100112: transform45
+    100114: transform46
+    100116: transform47
+    100118: transform48
+    100120: transform49
+    100122: transform5
+    100124: transform50
+    100126: transform51
+    100128: transform52
+    100130: transform53
+    100132: transform54
+    100134: transform55
+    100136: transform56
+    100138: transform57
+    100140: transform58
+    100142: transform59
+    100144: transform6
+    100146: transform60
+    100148: transform61
+    100150: transform62
+    100152: transform7
+    100154: transform8
+    100156: transform9
+    100158: //RootNode
+    100160: Visor
+    100162: Visor2
+    400000: Bota_Der
+    400002: Bota_Izq
+    400004: Cabeza
+    400006: Cuerpo
+    400008: Gallo
+    400010: Hombro_Der
+    400012: Hombro_Izq
+    400014: Mano_Der
+    400016: Mano_Izq
+    400018: pCylinder1
+    400020: polySurface11
+    400022: polySurface12
+    400024: polySurface13
+    400026: polySurface14
+    400028: polySurface15
+    400030: polySurface16
+    400032: polySurface17
+    400034: polySurface17 1
+    400036: polySurface18
+    400038: polySurface19
+    400040: polySurface20
+    400042: polySurface31
+    400044: polySurface32
+    400046: polySurface33
+    400048: polySurface34
+    400050: polySurface35
+    400052: polySurface36
+    400054: polySurface36 1
+    400056: polySurface37
+    400058: polySurface38
+    400060: polySurface39
+    400062: polySurface40
+    400064: polySurface41
+    400066: polySurface41 1
+    400068: polySurface42
+    400070: polySurface43
+    400072: polySurface44
+    400074: polySurface49
+    400076: pSphere1
+    400078: transform1
+    400080: transform10
+    400082: transform2
+    400084: transform22
+    400086: transform24
+    400088: transform25
+    400090: transform26
+    400092: transform27
+    400094: transform28
+    400096: transform29
+    400098: transform3
+    400100: transform30
+    400102: transform31
+    400104: transform32
+    400106: transform33
+    400108: transform4
+    400110: transform44
+    400112: transform45
+    400114: transform46
+    400116: transform47
+    400118: transform48
+    400120: transform49
+    400122: transform5
+    400124: transform50
+    400126: transform51
+    400128: transform52
+    400130: transform53
+    400132: transform54
+    400134: transform55
+    400136: transform56
+    400138: transform57
+    400140: transform58
+    400142: transform59
+    400144: transform6
+    400146: transform60
+    400148: transform61
+    400150: transform62
+    400152: transform7
+    400154: transform8
+    400156: transform9
+    400158: //RootNode
+    400160: Visor
+    400162: Visor2
+    2100000: unwrapChekcerShader
+    2300000: polySurface41
+    3300000: polySurface41
+    4300000: polySurface41
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unwrapChekcerShader
+    second: {fileID: 2100000, guid: 9e7a78c7e4fa8db4d8d48bfe26cef0ec, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 200
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

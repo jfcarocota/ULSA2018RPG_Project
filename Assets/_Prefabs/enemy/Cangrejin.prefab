@@ -719,11 +719,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  audioAttack: {fileID: 8300000, guid: 38a94e3431ed6304faf8761d623f8911, type: 3}
-  audioDamage: {fileID: 8300000, guid: 0b66c9f1d0996b741b985f1948dcddc2, type: 3}
-  audioDeath: {fileID: 8300000, guid: 276594a08e94b5f4cbcfd5cde2941242, type: 3}
-  audioHit: {fileID: 8300000, guid: 817edd103c21b3f418ace9ec368c2b39, type: 3}
-  audioWalk: {fileID: 8300000, guid: 1650bc4216aca0342ade636eaae902f8, type: 3}
+  audioAttack: {fileID: 8300000, guid: 40cf7c888fe83894796165173ad8a128, type: 3}
+  audioDamage: {fileID: 8300000, guid: 359ae7473eeb84b4988660e1678cf906, type: 3}
+  audioDeath: {fileID: 8300000, guid: 8b349f3f3a4a104449e3368738035b7d, type: 3}
+  audioHit: {fileID: 8300000, guid: 40cf7c888fe83894796165173ad8a128, type: 3}
+  audioWalk: {fileID: 8300000, guid: 7ee5cdeae41164c4c84f698253067d14, type: 3}
   maxHealth: 2
   damage: 1
   defense: 0
