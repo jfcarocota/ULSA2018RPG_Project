@@ -11,8 +11,9 @@ public class sceneTeleporter : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(sceneNumber);
             gameManager.instance.ChangeBackGroundMusic(sceneNumber);
+            gameManager.instance.changeScene(sceneNumber);
+            
         }
     }
 

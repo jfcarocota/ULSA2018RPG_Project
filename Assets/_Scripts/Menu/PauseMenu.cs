@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
@@ -119,7 +118,7 @@ public class PauseMenu : MonoBehaviour {
         audioEffects.Play();
         warningPanel.SetActive(false);
         gameManager.instance.IsPaused = false;
-        SceneManager.LoadScene(0);
+        gameManager.instance.changeScene(0);
         gameManager.instance.ChangeBackGroundMusic(0);
     }
 

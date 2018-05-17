@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TitleController : MonoBehaviour {
@@ -89,7 +88,7 @@ public class TitleController : MonoBehaviour {
 
             //load
             gameManager.instance.loadGame();
-            SceneManager.LoadScene(1);
+            gameManager.instance.changeScene(1);
             gameManager.instance.ChangeBackGroundMusic(1);
         }
 
@@ -116,7 +115,7 @@ public class TitleController : MonoBehaviour {
         audioEffects.clip = accept;
         audioEffects.Play();
         gameManager.instance.loadGame();
-        SceneManager.LoadScene(1);
+        gameManager.instance.changeScene(1);
         gameManager.instance.ChangeBackGroundMusic(1);
     }
 
@@ -126,7 +125,7 @@ public class TitleController : MonoBehaviour {
         audioEffects.clip = accept;
         audioEffects.Play();
         gameManager.instance.loadGame();
-        SceneManager.LoadScene(1);
+        gameManager.instance.changeScene(1);
         gameManager.instance.ChangeBackGroundMusic(1);
     }
 
