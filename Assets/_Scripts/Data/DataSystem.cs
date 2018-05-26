@@ -21,7 +21,7 @@ namespace GameUtils {
                 BinaryFormatter bf = new BinaryFormatter();
                 FileStream file = File.Create(Application.persistentDataPath + "/rpggame.dat");
 
-                GameData gamedata = new GameData("Rambo", 1, new Vector3(0, 0, 0), 20, 20, 10, 10, 1, 1, 1, 1, 1, 1, 1);
+                GameData gamedata = new GameData("Rambo", 1, new Vector3(0, 0, 0), 20, 20, 10, 10, 1, 0, 100, 1, 1, 1, 1, 1, 1);
                 bf.Serialize(file, gamedata);
                 file.Close();
             }

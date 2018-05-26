@@ -487,7 +487,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733885538884196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.4, y: 0, z: -250.1}
+  m_LocalPosition: {x: 16.4, y: 0, z: -190.3}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 4023493467368762}
@@ -892,7 +892,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1650bc4216aca0342ade636eaae902f8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7ee5cdeae41164c4c84f698253067d14, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   chaseDistance: 200
   attackDistance: 5
   attackTime: 1.18
-  enemyState: 0
+  RespawnTime: -1
 --- !u!137 &137650242672513192
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

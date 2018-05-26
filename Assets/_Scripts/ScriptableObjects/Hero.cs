@@ -1,54 +1,90 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GameUtils.DataSystem;
+using GameUtils.CombatantSystem;
 
-/*
-[CreateAssetMenu(fileName = "Hero", menuName = "Character/Hero", order = 1)]
-public class Hero : CharacterStats
+[CreateAssetMenu(fileName = "Hero", menuName = "Combatant/Hero", order = 1)]
+public class Hero : CombatantStats
 {
+    //name
     [SerializeField]
-    Vector3 position;
+    private string playerName;
+
+    //position
     [SerializeField]
-    float currentExperience;
+    private int actualScene;
     [SerializeField]
-    float experienceToNextLevel;
+    private Vector3 actualPosition;
+
+    //experience
     [SerializeField]
-    string lore;
+    private int currentExperience;
     [SerializeField]
-    Sprite heroSprite;
+    private int experienceToNextLevel;
+
+    //sprite
+    [SerializeField]
+    private Sprite heroSprite;
 
     public void InitData(GameData gd)
     {
-        level = gd.Level;
-        magicPower = gd.MagicPower;
-        mana = gd.Mana;
-        attackPower = gd.AttackPower;
-        defense = gd.Deffense;
-        magicPower = gd.MagicPower;
-        health = gd.Health;
-        position.x = gd.PosX;
-        position.y = gd.PosY;
-        currentExperience = gd.CurrentExperience;
-        experienceToNextLevel = gd.ExperienceToNextLevel;
-        maxMana = gd.MaxMana;
-        maxHealth = gd.MaxHealth;
+        //name
+        PlayerName = gd.PlayerName;
+
+        //position
+        ActualScene = gd.ActualScene;
+        float actualPosX = gd.ActualPositionX;
+        float actualPosY = gd.ActualPositionY;
+        float actualPosZ = gd.ActualPositionZ;
+        ActualPosition = new Vector3(actualPosX, actualPosY, actualPosZ);
+
+        //OnGUIData
+        MaxHealth = gd.MaxHealth;
+        ActualHealth = gd.ActualHealth;
+        MaxMana = gd.MaxMana;
+        ActualMana = gd.ActualMana;
+
+        //Level & Experience
+        Level = gd.Level;
+        CurrentExperience = gd.CurrentExperience;
+        ExperienceToNextLevel = gd.ExperienceToNextLevel;
+
+        //Stats
+        Streight = gd.Streight;
+        Dextery = gd.Dextery;
+        Agility = gd.Agility;
+        Inteligence = gd.Inteligence;
+        Luck = gd.Luck;
+        Vitality = gd.Vitality;
     }
 
-    public Vector3 Position
+    public string PlayerName
     {
         get
         {
-            return position;
+            return playerName;
         }
 
         set
         {
-            position = value;
+            playerName = value;
         }
     }
 
-    public float CurrentExperience
+    public int ActualScene
+    {
+        get
+        {
+            return actualScene;
+        }
+
+        set
+        {
+            actualScene = value;
+        }
+    }
+
+    public int CurrentExperience
     {
         get
         {
@@ -61,7 +97,7 @@ public class Hero : CharacterStats
         }
     }
 
-    public float ExperienceToNextLevel
+    public int ExperienceToNextLevel
     {
         get
         {
@@ -71,19 +107,6 @@ public class Hero : CharacterStats
         set
         {
             experienceToNextLevel = value;
-        }
-    }
-
-    public string Lore
-    {
-        get
-        {
-            return lore;
-        }
-
-        set
-        {
-            lore = value;
         }
     }
 
@@ -99,5 +122,18 @@ public class Hero : CharacterStats
             heroSprite = value;
         }
     }
-}*/
+
+    public Vector3 ActualPosition
+    {
+        get
+        {
+            return actualPosition;
+        }
+
+        set
+        {
+            actualPosition = value;
+        }
+    }
+}
 

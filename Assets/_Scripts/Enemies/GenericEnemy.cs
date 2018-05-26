@@ -15,20 +15,43 @@ public class GenericEnemy : Combatant {
     [SerializeField] float attackDistance;
     [SerializeField] float attackTime;
 
+    [SerializeField] private float RespawnTime;
+    private Vector3 RespawnPlace;
+
+    [Header("Drop")]
+    [SerializeField] GameObject drop;
+    [SerializeField] float dropRate;
+
     NavMeshAgent Nav;
 
-    public enum botStates { waiting, chase, attack };
-    public botStates enemyState;
+    public enum botStates { waiting, chase, attack, dying };
+    private botStates enemyState;
 
     private bool isPatrolling;
+
+    public botStates EnemyState
+    {
+        get
+        {
+            return enemyState;
+        }
+
+        set
+        {
+            enemyState = value;
+            Axis = Vector2.zero;
+            Nav.SetDestination(transform.position);
+        }
+    }
 
     protected override void Start()
     {
         base.Start();
-        enemyState = botStates.waiting;
         Nav = GetComponent<NavMeshAgent>();
         Nav.speed = Speed;
         Nav.angularSpeed = 360;
+        EnemyState = botStates.waiting;
+        RespawnPlace = transform.position;
     }
 
     private void Update()
@@ -37,7 +60,7 @@ public class GenericEnemy : Combatant {
         if (gameManager.instance.IsPaused) return;
 
         //IA
-        switch (enemyState)
+        switch (EnemyState)
         {
             case botStates.waiting:
                 //inicia patrullaje en caso de no haberse activado ya
@@ -47,7 +70,7 @@ public class GenericEnemy : Combatant {
                 {
                     if (Vector3.Angle(gameManager.instance.player.position, transform.position) <= visionRange)
                     {
-                        enemyState = botStates.chase;
+                        EnemyState = botStates.chase;
                     }
                 }
                 break;
@@ -59,7 +82,7 @@ public class GenericEnemy : Combatant {
                     if (Vector3.Distance(gameManager.instance.player.position, transform.position) <= attackDistance)
                     {
                         Anim.SetFloat("speed", 0f);
-                        enemyState = botStates.attack;
+                        EnemyState = botStates.attack;
                     }
                     else
                     {
@@ -67,7 +90,7 @@ public class GenericEnemy : Combatant {
                         Anim.SetFloat("speed", 1f);
                     }
                 }
-                else enemyState = botStates.waiting;
+                else EnemyState = botStates.waiting;
                 break;
             case botStates.attack:
                 Aud.Stop();
@@ -76,6 +99,9 @@ public class GenericEnemy : Combatant {
                     transform.LookAt(gameManager.instance.player);
                     StartCoroutine(attack(attackTime));
                 }
+                break;
+            case botStates.dying:
+                //Deja de realizar acciones
                 break;
             default:
                 Debug.Log("Error en update del objeto" + transform.name);
@@ -87,7 +113,7 @@ public class GenericEnemy : Combatant {
     IEnumerator patrol(float time)
     {
         isPatrolling = true;
-        while (enemyState == botStates.waiting)
+        while (EnemyState == botStates.waiting)
         {
             if (gameManager.instance.IsPaused)
             {
@@ -129,7 +155,57 @@ public class GenericEnemy : Combatant {
 
         isAttacking = false;
 
-        enemyState = botStates.chase;
+        EnemyState = botStates.chase;
+    }
+
+    protected override void GetHurt(int inDamageValue)
+    {
+        if (!invulnerable)
+        {
+            Health -= (inDamageValue - defense);
+            if (Health > 0)
+            {
+                Aud.PlayOneShot(audioDamage);
+                Anim.SetTrigger("damage");
+            }
+            else
+            {
+                Aud.PlayOneShot(audioDeath);
+                EnemyState = botStates.dying;
+                Anim.SetTrigger("death");
+                gameManager.instance.StartCoroutine(DespawnNWait(RespawnTime));
+                
+            }
+            invulnerable = true;
+            if (Health > 0) StartCoroutine(ModifierCountDown(1, (x) => invulnerable = x));
+        }
+
+    }
+
+    private IEnumerator DespawnNWait(float RespawnTime)
+    {
+        //WaitForDie
+        yield return new WaitForSeconds(audioDeath.length);
+
+        //Deactive
+        gameObject.SetActive(false);
+        if (RespawnTime <= 0) yield break;
+
+        yield return new WaitForSeconds(RespawnTime);
+        //Reset
+        transform.position = RespawnPlace;
+        invulnerable = false;
+        isAttacking = false;
+        Anim.SetTrigger("respawn");
+        EnemyState = botStates.waiting;
+        Health = maxHealth;
+
+        gameObject.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        if (Random.Range(0, 100) < dropRate) Instantiate(drop, transform.position, Quaternion.identity);
     }
 
 }

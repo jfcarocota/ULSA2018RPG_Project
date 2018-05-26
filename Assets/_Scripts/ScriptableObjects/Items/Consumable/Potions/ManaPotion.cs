@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Mana Potion", menuName = "Item/Potion/ManaPotion", order = 1)]
-public class ManaPotion : Item {
+public class ManaPotion : Consumable {
 
     [SerializeField]
     int recoverValue;
@@ -19,5 +19,10 @@ public class ManaPotion : Item {
         {
             recoverValue = value;
         }
+    }
+
+    public override void Drink(Hero h)
+    {
+        throw new System.NotImplementedException();
     }
 }

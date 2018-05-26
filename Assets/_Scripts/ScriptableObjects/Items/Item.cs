@@ -1,84 +1,89 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Item : ScriptableObject {
-
-    [SerializeField]
-    protected string itemName;
-    [SerializeField]
-    protected string description;
-    [SerializeField]
-    protected Sprite image;
-    [SerializeField]
-    protected int saleValue;
-    [SerializeField]
-    protected bool keyObject;
-    [SerializeField]
-    protected int rarity;
-
-    protected string ItemName
+namespace GameUtils
+{
+    namespace ItemSystem
     {
-        get
+        public class Item : ScriptableObject
         {
-            return itemName;
-        }
 
-        set
-        {
-            itemName = value;
-        }
-    }
+            [SerializeField]
+            protected string itemName;
+            [SerializeField]
+            protected string description;
+            [SerializeField]
+            protected Sprite image;
+            [SerializeField]
+            protected int saleValue;
+            [SerializeField]
+            protected bool keyObject;
+            [SerializeField]
+            protected int rarity;
 
-    protected string Description
-    {
-        get
-        {
-            return description;
-        }
+            protected string ItemName
+            {
+                get
+                {
+                    return itemName;
+                }
 
-        set
-        {
-            description = value;
-        }
-    }
+                set
+                {
+                    itemName = value;
+                }
+            }
 
-    protected Sprite Image
-    {
-        get
-        {
-            return image;
-        }
+            protected string Description
+            {
+                get
+                {
+                    return description;
+                }
 
-        set
-        {
-            image = value;
-        }
-    }
+                set
+                {
+                    description = value;
+                }
+            }
 
-    protected int SaleValue
-    {
-        get
-        {
-            return saleValue;
-        }
+            protected Sprite Image
+            {
+                get
+                {
+                    return image;
+                }
 
-        set
-        {
-            saleValue = value;
-        }
-    }
+                set
+                {
+                    image = value;
+                }
+            }
 
-    protected bool KeyObject
-    {
-        get
-        {
-            return keyObject;
-        }
+            protected int SaleValue
+            {
+                get
+                {
+                    return saleValue;
+                }
 
-        set
-        {
-            keyObject = value;
+                set
+                {
+                    saleValue = value;
+                }
+            }
+
+            protected bool KeyObject
+            {
+                get
+                {
+                    return keyObject;
+                }
+
+                set
+                {
+                    keyObject = value;
+                }
+            }
         }
     }
 }

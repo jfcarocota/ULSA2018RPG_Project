@@ -12,8 +12,24 @@ public class Player : Combatant {
     [SerializeField] private Slider ManaBar;
     [SerializeField] public TextBox textBox;
     [SerializeField] private GameObject PausePanel;
+    [SerializeField] private Hero heroStats;
+
+    private int currentExperience;
 
     public Interactuable interactionTarget;
+
+    public Hero HeroStats
+    {
+        get
+        {
+            return heroStats;
+        }
+
+        set
+        {
+            heroStats = value;
+        }
+    }
 
     new void Start()
     {
@@ -104,14 +120,47 @@ public class Player : Combatant {
         isAttacking = false;
     }
 
-    protected override void GetHurt(int inDamageValue)
+    public void ResetStats()
     {
-        base.GetHurt(inDamageValue);
-        HealthBar.value = (float)Health / (float)maxHealth;
+        maxHealth = heroStats.MaxHealth;
+        damage = HeroStats.Streight;
+        defense = HeroStats.Vitality;
+        Speed = (float)HeroStats.Agility / 3f;
+        //dexterity
+        //luck
+        //inteligence
+        //mana
     }
 
-    /*public void AlterStats()
+    public void ResetHero()
     {
-        gameManager.instance.GameData = new GameData();
-    }*/
+        Health = HeroStats.ActualHealth;
+        currentExperience = HeroStats.CurrentExperience;
+
+        maxHealth = heroStats.MaxHealth;
+        damage = HeroStats.Streight;
+        defense = HeroStats.Vitality;
+        Speed = (float)HeroStats.Agility / 3f;
+    }
+
+    public void ResetVariantValues()
+    {
+        Health = HeroStats.ActualHealth;
+        //mana
+        currentExperience = HeroStats.CurrentExperience;
+    }
+
+    protected override int Health
+    {
+        get
+        {
+            return base.Health;
+        }
+
+        set
+        {
+            base.Health = value;
+            HealthBar.value = (float)Health / (float)maxHealth;
+        }
+    }
 }

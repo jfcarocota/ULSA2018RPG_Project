@@ -11,7 +11,7 @@ public class agroTrigger : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            enemy.enemyState = GenericEnemy.botStates.chase;
+            enemy.EnemyState = GenericEnemy.botStates.chase;
             if (obstacle != null)
             {
                 gameManager.instance.ChangeBackGroundMusic(3);

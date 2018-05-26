@@ -83,7 +83,7 @@ public class TitleController : MonoBehaviour {
         else
         {
             //ac.PlayClipOnce(0);
-            gameManager.instance.GameData = new GameData("0", 0, new Vector3(0, 0, 0), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            gameManager.instance.GameData = new GameData("0", 0, new Vector3(0, 0, 0), 0, 0, 0,0,0, 0, 0, 0, 0, 0, 0, 0, 0);
             gameManager.instance.saveGame();
 
             //load
@@ -108,7 +108,7 @@ public class TitleController : MonoBehaviour {
     public void AcceptNewGame()
     {
         warningPanel.SetActive(false);
-        gameManager.instance.GameData = new GameData("0", 0, new Vector3(0, 0, 0), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        gameManager.instance.GameData = new GameData("0", 0, new Vector3(0, 0, 0), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         gameManager.instance.saveGame();
 
         //load

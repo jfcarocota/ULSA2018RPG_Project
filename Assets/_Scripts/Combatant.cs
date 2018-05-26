@@ -9,13 +9,13 @@ public class Combatant : Actor {
     [SerializeField] protected AudioClip audioDamage;
     [SerializeField] protected AudioClip audioDeath;
     [SerializeField] protected AudioClip audioHit;
-    [SerializeField] protected AudioClip audioWalk;
+    [SerializeField] protected AudioClip audioWalk; 
 
     [Header("Stats")]
     [SerializeField] protected int maxHealth;
     [SerializeField] public int damage;
     [SerializeField] protected int defense;
-    protected int Health;
+    private int health;
 
     [Header("DamageBox")]
     [Tooltip("Its required a pivot with the boxTrigger inside it")]
@@ -25,19 +25,31 @@ public class Combatant : Actor {
 
     protected bool isAttacking;
 
-    private bool grougi;
-    private bool invulnerable;
+    protected bool grougi;
+    protected bool invulnerable;
 
-	// Use this for initialization
-	protected override void Start () {
+    protected virtual int Health
+    {
+        get
+        {
+            return health;
+        }
+
+        set
+        {
+            health = value;
+        }
+    }
+
+    // Use this for initialization
+    protected override void Start () {
         base.Start();
         Health = maxHealth;
 
         damageBoxStartPosition = damageBox.position;
         damageBoxMaxScale = damageBox.localScale;
         damageBox.localScale = Vector3.zero;
-
-        Anim.SetInteger("life", Health);
+        //StartCoroutine(ShowInvulnerability());
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -56,16 +68,15 @@ public class Combatant : Actor {
             if (Health > 0)
             {
                 Aud.PlayOneShot(audioDamage);
+                Anim.SetTrigger("damage");
             }
             else
             {
                 Aud.PlayOneShot(audioDeath);
-                Destroy(gameObject, audioDeath.length);
+                Anim.SetTrigger("death");
             }
-
-            Anim.SetInteger("life", Health);
             invulnerable = true;
-            StartCoroutine(ModifierCountDown(1, (x) => invulnerable = x));
+            if(Health > 0) StartCoroutine(ModifierCountDown(1, (x) => invulnerable = x));
         }
         
     }
@@ -93,5 +104,23 @@ public class Combatant : Actor {
         yield return new WaitForSeconds(animationTime / 2);
         //reset damagebox
         damageBox.localScale = Vector3.zero;
+    }
+
+    private IEnumerator ShowInvulnerability()
+    {
+        Color initialColor; //= rend.material.GetColor("Specular");
+        while(true){
+            if (invulnerable)
+            {
+                //if(initialColor == rend.material.GetColor("Specular")) rend.material.SetColor("Specular", Color.white);
+                //else rend.material.SetColor("Specular", initialColor);
+                //cambiar color a blanco
+                yield return new WaitForSeconds(0.5f);
+            }
+            /*else{
+             rend.material.SetColor("Specular", initialColor);
+            }*/
+        }
+        
     }
 }

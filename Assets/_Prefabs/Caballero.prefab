@@ -2569,7 +2569,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996285220446242}
   m_LocalRotation: {x: 0.4251434, y: 0.0020405625, z: -0.0009430265, w: 0.90512323}
-  m_LocalPosition: {x: -0.10000038, y: 27, z: -22.400002}
+  m_LocalPosition: {x: -0.10000038, y: 27, z: -22.399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4605853504020040}
@@ -2799,7 +2799,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095957165564002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.8, y: 0, z: -89.6}
+  m_LocalPosition: {x: 4.68, y: 0, z: -30.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665426111238554}
@@ -4248,7 +4248,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -5365,6 +5365,7 @@ MonoBehaviour:
   ManaBar: {fileID: 114969812108861452}
   textBox: {fileID: 114832284572479094}
   PausePanel: {fileID: 1900758675017300}
+  heroStats: {fileID: 11400000, guid: 2c14db2980568b0409a903921f947f80, type: 2}
   interactionTarget: {fileID: 0}
 --- !u!114 &114291640289188834
 MonoBehaviour:

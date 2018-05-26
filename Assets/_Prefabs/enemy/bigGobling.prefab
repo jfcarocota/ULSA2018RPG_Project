@@ -689,8 +689,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551590875325668}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0454, y: 0.01, z: -50.535}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 66.6, y: 9.824453, z: 20.5}
   m_LocalScale: {x: 4.3844905, y: 4.384489, z: 4.384489}
   m_Children:
   - {fileID: 4696023964699054}
@@ -1110,7 +1110,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1650bc4216aca0342ade636eaae902f8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7ee5cdeae41164c4c84f698253067d14, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   audioAttack: {fileID: 8300000, guid: 46b82f2853382ec428d1b6d18575ae87, type: 3}
   audioDamage: {fileID: 8300000, guid: 01955b04e42a522498a8668bb85013d6, type: 3}
   audioDeath: {fileID: 8300000, guid: 37335e45720e2e74092b2ffe9ca85833, type: 3}
-  audioHit: {fileID: 8300000, guid: 46b82f2853382ec428d1b6d18575ae87, type: 3}
+  audioHit: {fileID: 8300000, guid: c48efd7fb0106a44aabc71f255ee0910, type: 3}
   audioWalk: {fileID: 8300000, guid: 7ee5cdeae41164c4c84f698253067d14, type: 3}
   maxHealth: 8
   damage: 1
@@ -1249,7 +1249,9 @@ MonoBehaviour:
   chaseDistance: 20
   attackDistance: 3
   attackTime: 1.13
-  enemyState: 0
+  RespawnTime: 20
+  drop: {fileID: 1674194939241354, guid: 826de1005373c65479cd9e241af9f30d, type: 2}
+  dropRate: 100
 --- !u!137 &137005455643117660
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

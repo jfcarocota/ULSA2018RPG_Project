@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Antidote Potion", menuName = "Item/Potion/AntidotePotion", order = 1)]
-public class AntidotePotion : Item {
+public class AntidotePotion : Consumable {
 
     [SerializeField]
     private string malusToClean;
 
-    public string MalusToClean1
+    public string MalusToClean
     {
         get
         {
@@ -19,5 +19,10 @@ public class AntidotePotion : Item {
         {
             malusToClean = value;
         }
+    }
+
+    public override void Drink(Hero h)
+    {
+        throw new System.NotImplementedException();
     }
 }
